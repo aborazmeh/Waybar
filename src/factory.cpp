@@ -22,6 +22,9 @@ waybar::AModule* waybar::Factory::makeModule(const std::string& name) const {
     if (ref == "sway/window") {
       return new waybar::modules::sway::Window(id, bar_, config_[name]);
     }
+    if (ref == "sway/keyboard") {
+      return new waybar::modules::sway::Keyboard(id, config_[name]);
+    }
 #endif
     if (ref == "idle_inhibitor") {
       return new waybar::modules::IdleInhibitor(id, bar_, config_[name]);
